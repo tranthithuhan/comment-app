@@ -1,12 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import {render} from 'react-dom';
+import {Route, BrowserRouter as Router, Redirect} from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import AppContainer from './containers/AppContainer.js';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import "./styles/App.css"
+
+export const MAIN_PAGE_ROUTE = "/";
+
+render((
+    <Router>
+        <div className={"container"}>
+            <Route path={MAIN_PAGE_ROUTE} component={AppContainer} />
+            <Redirect to='/' />
+        </div>
+    </Router>
+), document.getElementById('root'));
