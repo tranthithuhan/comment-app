@@ -1,26 +1,12 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {Provider} from 'react-redux';
-import {BrowserRouter as Router} from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-import AppContainer from './containers/AppContainer.js';
+ReactDOM.render(<App />, document.getElementById('root'));
 
-import configureStore from './reducers/configureStore';
-import reducers from './reducers/configReducers';
-
-import 'antd/dist/antd.css';
-import "./styles/App.css"
-
-export const MAIN_PAGE_ROUTE = "/";
-export const PRODUCT_PAGE_ROUTE = "/products";
-export const PRODUCT_ITEM_PAGE_ROUTE = "/products/:productId";
-
-render((
-    <Provider store={configureStore(reducers)}>
-        <Router>
-            <div className={"container"}>
-                <AppContainer/>
-            </div>
-        </Router>
-    </Provider>
-), document.getElementById('root'));
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
