@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Menu, Icon, Layout} from 'antd';
 import {MAIN_PAGE_ROUTE, PRODUCT_PAGE_ROUTE} from "../index";
 
-export default class AppMenu extends Component {
+export class AppMenu extends Component {
     handleMenuClick = (item) => {
         this.props.onClick(item.key)
     };
@@ -32,3 +32,5 @@ export default class AppMenu extends Component {
         );
     }
 }
+
+export default AppMenu;

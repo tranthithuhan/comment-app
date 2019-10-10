@@ -1,9 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import {configure, mount} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+import {AppContainer} from '../containers/AppContainer';
+
+configure({adapter: new Adapter(), disableLifecycleMethods: true});
+
+
+describe('<AppMenu />', () => {
+    const wrapper = mount(<AppContainer/>);
+
+    it('renders without app container', () => {
+        expect(wrapper.find(".app-container").length).toBe(1)
+    });
 });
+
