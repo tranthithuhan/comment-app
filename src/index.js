@@ -12,7 +12,8 @@ import 'antd/dist/antd.css';
 import "./styles/App.css"
 
 export const MAIN_PAGE_ROUTE = "/";
-export const PRODUCT_PAGE_ROUTE = "/produits";
+export const PRODUCT_PAGE_ROUTE = "/products";
+export const PRODUCT_ITEM_PAGE_ROUTE = "/products/:productId";
 
 render((
     <Provider store={configureStore(reducers)}>
