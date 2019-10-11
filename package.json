@@ -4,16 +4,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-sass start-js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-sass": "node-sass-chokidar src/ -o src/",
+    "watch-sass": "node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "dependencies": {
     "antd": "^3.23.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "nanoid": "^2.1.2",
+    "node-sass": "^4.12.0",
+    "node-sass-chokidar": "^1.3.5",
+    "npm-run-all": "^4.1.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.1",
