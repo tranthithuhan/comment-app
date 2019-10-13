@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
-import {withRouter, Route, Switch, Redirect} from 'react-router';
+import {withRouter, Route, Switch} from 'react-router';
 import {Layout, Icon} from 'antd';
-import AppMenu from "../components/AppMenu";
-import {MAIN_PAGE_ROUTE, PRODUCT_ITEM_PAGE_ROUTE, PRODUCT_PAGE_ROUTE} from "../index";
+import {compose} from 'redux';
+
+import AppMenu from "./AppMenu";
 import ProductList from "./ProductList";
 import ProductItem from "./ProductItem";
 
+import {userIsAuthenticatedRedir} from "../utils/utils";
+
+import {MAIN_PAGE_ROUTE, PRODUCT_ITEM_PAGE_ROUTE, PRODUCT_PAGE_ROUTE} from "../Main";
+
 export class AppContainer extends Component {
     state = {
-        siderIsCollapsed: true,
+        siderIsCollapsed: false,
     };
 
     toggle = () => {
@@ -24,8 +29,7 @@ export class AppContainer extends Component {
     render() {
         return (
             <Layout className="app-container container">
-                <AppMenu currentRoute={this.props.location.pathname}
-                         siderIsCollapsed={this.state.siderIsCollapsed}
+                <AppMenu siderIsCollapsed={this.state.siderIsCollapsed}
                          onClick={this.goTo}/>
 
                 <Layout>
@@ -38,15 +42,11 @@ export class AppContainer extends Component {
                     </Layout.Header>
                     <Layout.Content>
                         <Switch>
-                            <Route exact key={MAIN_PAGE_ROUTE} path={MAIN_PAGE_ROUTE} render={() =>
-                                <div>
-                                    <div className="app-logo"/>
-                                    <h1>Hello</h1>
-                                </div>
-                            }/>
+                            <Route exact key={MAIN_PAGE_ROUTE} path={MAIN_PAGE_ROUTE} component={ProductList}/>
                             <Route exact key={PRODUCT_PAGE_ROUTE} path={PRODUCT_PAGE_ROUTE} component={ProductList}/>
-                            <Route exact key={PRODUCT_ITEM_PAGE_ROUTE} path={PRODUCT_ITEM_PAGE_ROUTE} component={ProductItem}/>
-                            <Redirect to={MAIN_PAGE_ROUTE}/>
+                            <Route exact key={PRODUCT_ITEM_PAGE_ROUTE} path={PRODUCT_ITEM_PAGE_ROUTE}
+                                   component={ProductItem}/>
+
                         </Switch>
                     </Layout.Content>
                 </Layout>
@@ -55,4 +55,7 @@ export class AppContainer extends Component {
     }
 }
 
-export default withRouter(AppContainer);
+export default compose(
+    withRouter,
+    userIsAuthenticatedRedir
+)(AppContainer);

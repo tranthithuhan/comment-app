@@ -3,7 +3,7 @@ import {withRouter, Route} from 'react-router';
 import { List, Avatar } from 'antd';
 import {connect} from 'react-redux';
 import { compose} from 'redux';
-import {PRODUCT_ITEM_PAGE_ROUTE} from "../index";
+import {PRODUCT_ITEM_PAGE_ROUTE} from "../Main";
 
 export class ProductList extends Component {
     handleSelectProduct = (productId) => () => {

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Comment, List  } from 'antd';
+import moment from "moment";
 
 export default class CommentList extends Component {
 
@@ -14,6 +15,7 @@ export default class CommentList extends Component {
                     {...comment}
                     author={comment.author.name}
                     avatar={comment.author.avatar}
+                    datetime={moment(comment.author.datetime).format("DD/MM/YYYY hh:mm")}
                 />}
             />
         );

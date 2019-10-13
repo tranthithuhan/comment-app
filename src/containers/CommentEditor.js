@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Button, Checkbox, Form, Input, List} from 'antd';
+import {Button, Checkbox, Form, Input} from 'antd';
 import {connect} from 'react-redux';
+
 import {addComment} from "../reducers/reducer";
 
-class CommentEditor extends Component {
+export class CommentEditor extends Component {
     state = {
         comment: "",
         isPrivate: false
@@ -26,7 +27,7 @@ class CommentEditor extends Component {
         const {comment, isPrivate} = this.state;
 
         return (
-            <div>
+            <div className="comment-editor">
                 <Form.Item>
                     <Input.TextArea rows={4}
                                     value={comment}
