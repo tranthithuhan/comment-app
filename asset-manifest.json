@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/comment-app/static/css/main.1e6a8def.chunk.css",
+    "main.css": "/comment-app/static/css/main.4eecb46c.chunk.css",
     "main.js": "/comment-app/static/js/main.41353f95.chunk.js",
     "main.js.map": "/comment-app/static/js/main.41353f95.chunk.js.map",
     "runtime-main.js": "/comment-app/static/js/runtime-main.fc77d700.js",
@@ -9,17 +9,17 @@
     "static/js/2.7ae5107b.chunk.js": "/comment-app/static/js/2.7ae5107b.chunk.js",
     "static/js/2.7ae5107b.chunk.js.map": "/comment-app/static/js/2.7ae5107b.chunk.js.map",
     "index.html": "/comment-app/index.html",
-    "precache-manifest.4845f2d07d4c8d6c6fcefaec59a08445.js": "/comment-app/precache-manifest.4845f2d07d4c8d6c6fcefaec59a08445.js",
+    "precache-manifest.45f8b89e24b7d6111fe4cf9e604c2e54.js": "/comment-app/precache-manifest.45f8b89e24b7d6111fe4cf9e604c2e54.js",
     "service-worker.js": "/comment-app/service-worker.js",
     "static/css/2.802837ff.chunk.css.map": "/comment-app/static/css/2.802837ff.chunk.css.map",
-    "static/css/main.1e6a8def.chunk.css.map": "/comment-app/static/css/main.1e6a8def.chunk.css.map",
+    "static/css/main.4eecb46c.chunk.css.map": "/comment-app/static/css/main.4eecb46c.chunk.css.map",
     "static/media/App.css": "/comment-app/static/media/logo.25bf045c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.fc77d700.js",
     "static/css/2.802837ff.chunk.css",
     "static/js/2.7ae5107b.chunk.js",
-    "static/css/main.1e6a8def.chunk.css",
+    "static/css/main.4eecb46c.chunk.css",
     "static/js/main.41353f95.chunk.js"
   ]
 }
