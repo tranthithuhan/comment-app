@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {withRouter, Route} from 'react-router';
 import {connect} from 'react-redux';
 import get from "lodash/get"
-import {Row, Col, Card, Descriptions, Comment, Avatar} from 'antd';
+
+import {Card, Descriptions, Comment, Avatar} from 'antd';
 import CommentList from "../components/CommentList";
 import CommentEditor from "./CommentEditor";
+
 import {commentsFilter} from "../utils/utils";
 
 export class ProductItem extends Component {
@@ -40,7 +41,7 @@ export class ProductItem extends Component {
 
 const mapStateToProps = (state, props) => {
     const productId = get(props, "match.params.productId");
-    const product = state.reducer.products.find(product => product.id === productId);
+    const product = state.reducer.products.find(product => product.id == productId);
 
     return {
         product,

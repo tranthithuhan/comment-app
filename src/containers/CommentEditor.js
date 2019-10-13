@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Button, Checkbox, Form, Input, List} from 'antd';
+import {Button, Checkbox, Form, Input} from 'antd';
 import {connect} from 'react-redux';
+
 import {addComment} from "../reducers/reducer";
 
 class CommentEditor extends Component {
